@@ -198,7 +198,8 @@ h2 {
   overflow: hidden;
 }
  
-.movie-card:hover .poster-synopsis {
+.movie-card:hover .poster-synopsis,
+.movie-card.tapped .poster-synopsis {
   opacity: 1;
 }
  
