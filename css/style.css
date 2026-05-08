@@ -1,0 +1,439 @@
+ /* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  background-color: #0e0e0e;
+  color: #DBD3D8;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+ 
+img {
+  max-width: 100%;
+  display: block;
+}
+ 
+a {
+  color: #DBB4A0;
+  text-decoration: none;
+}
+ 
+/* --- Header / Nav --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  position: sticky;
+  top: 0;
+  background: black;
+  border-bottom: 1px solid #2a2a2a;
+  z-index: 100;
+}
+ 
+.logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #DBB4A0;
+  letter-spacing: -0.5px;
+}
+ 
+nav {
+  display: flex;
+  gap: 2rem;
+}
+ 
+nav a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #888880;
+  letter-spacing: 0.05em;
+  transition: color 0.25s ease;
+}
+ 
+nav a:hover {
+  color: #DBB4A0;
+}
+ 
+.nav-active {
+  color: #DBB4A0;
+  border-bottom: 2px solid #DBB4A0;
+  padding-bottom: 0.25rem;
+}
+ 
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  background: #DBB4A0;
+  color: #0e0e0e;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  border-radius: 8px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+ 
+.btn:hover {
+  background: #D77A61;
+}
+ 
+.btn-outline {
+  background: transparent;
+  color: #DBB4A0;
+  border: 1px solid #DBB4A0;
+}
+ 
+.btn-outline:hover {
+  background: #DBB4A0;
+  color: #0e0e0e;
+}
+ 
+h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+ 
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2.5rem;
+}
+ 
+.section-header h2 {
+  margin-bottom: 0;
+}
+ 
+.hero-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #DBB4A0;
+  margin-bottom: 1.2rem;
+}
+ 
+.see-all {
+  font-size: 0.9rem;
+  color: #DBB4A0;
+  transition: opacity 0.25s ease;
+}
+ 
+.see-all:hover {
+  opacity: 0.7;
+}
+ 
+/* --- Movie Cards (shared across index + movies) --- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+ 
+.movie-card {
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+ 
+.movie-card:hover {
+  border-color: #DBB4A0;
+  box-shadow: 0 16px 40px rgba(219, 180, 160, 0.12);
+  transform: translateY(-4px);
+}
+ 
+.poster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0; left: 0;
+  transition: transform 0.4s ease;
+}
+ 
+.poster-placeholder {
+  font-size: 3rem;
+  opacity: 0.3;
+  z-index: 0;
+}
+ 
+.poster-synopsis {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: #e8e0d0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  padding: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+}
+ 
+.movie-card:hover .poster-synopsis {
+  opacity: 1;
+}
+ 
+.card-info {
+  padding: 1rem 1.1rem 1.2rem;
+}
+ 
+.card-info h3 {
+  font-family: 'Bebas Neue', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+ 
+.year {
+  font-size: 0.9rem;
+  color: #888880;
+}
+ 
+.card-stars {
+  font-size: 1.2rem;
+  color: #DBB4A0;
+  letter-spacing: 2px;
+  margin: 0.5rem 0;
+}
+ 
+
+.genre-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 500;
+}
+ 
+/* Genre colors */
+.genre-drama     {
+   background: #0d1b2e; 
+   color: #5b9bd5; 
+   border-color: #1e3a5f; 
+  }
+.genre-comedy    { 
+  background: #2e2600; 
+  color: #d4a017; 
+  border-color: #5a4a00; 
+}
+.genre-romance   { 
+  background: #2e0d1a; 
+  color: #e07ba0; 
+  border-color: #5a1a35; 
+}
+.genre-fantasy   { 
+  background: #1e0d2e; 
+  color: #a87dd4; 
+  border-color: #3d1a5a; 
+}
+.genre-adventure { 
+  background: #2e1500; 
+  color: #d47a30; 
+  border-color: #5a2d00; 
+}
+.genre-musical   { 
+  background: #0d2e2a; 
+  color: #3dbfb0; 
+  border-color: #1a5a52; 
+}
+.genre-mystery   { 
+  background: #0d0d2e; 
+  color: #7b7bd4; 
+  border-color: #1a1a5a; 
+}
+.genre-sci-fi    { 
+  background: #002e2e; 
+  color: #30d4d4; 
+  border-color: #005a5a; 
+}
+.genre-horror    { 
+  background: #2e0d0d; 
+  color: #d45b5b; 
+  border-color: #5a1a1a; 
+}
+.genre-action    { 
+  background: #2e1e00; 
+  color: #d4961e; 
+  border-color: #5a3d00; 
+}
+.genre-thriller  { 
+  background: #1a1e14; 
+  color: #8a9e70; 
+  border-color: #353d28; 
+}
+ 
+ 
+/* --- Stats (shared across movies + about) --- */
+.stat {
+  text-align: center;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 1.25rem 2rem;
+}
+ 
+.stat-number {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #DBB4A0;
+  line-height: 1;
+}
+ 
+.stat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #888888;
+  font-weight: 600;
+}
+ 
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 1.5rem 5%;
+  border-top: 1px solid #2a2a2a;
+  color: #888880;
+  font-size: 0.85rem;
+}
+ 
+.footer-logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  color: #DBB4A0;
+  margin-bottom: 0.5rem;
+}
+ 
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+ 
+.footer-socials a {
+  color: #888880;
+  transition: color 0.25s ease;
+}
+ 
+.footer-socials a:hover {
+  color: #DBB4A0;
+}
+ 
+.footer-socials svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  display: block;
+}
+ 
+/* --- Back to Top --- */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  background: #DBB4A0;
+  color: #0e0e0e;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background 0.25s ease, transform 0.25s ease;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+ 
+.back-to-top:hover {
+  background: #D77A61;
+  transform: translateY(-3px);
+}
+ 
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .btn {
+    display: block;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+   .page-hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}
+ 
+@media (max-width: 600px) {
+  header {
+    padding: 1rem 5%;
+  }
+  nav {
+    gap: 1.2rem;
+  }
+  nav a {
+    font-size: 0.8rem;
+  }
+  .btn {
+    display: block;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+   .page-hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}

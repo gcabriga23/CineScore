@@ -1,0 +1,302 @@
+ /* --- Hero --- */
+.about-hero {
+  padding: 3rem 5%;
+  border-bottom: 1px solid #2a2a2a;
+  position: relative;
+  overflow: hidden;
+}
+ 
+/* Subtle background accent like index hero */
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(ellipse at center, rgba(219,180,160,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+ 
+.about-profile {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+}
+ 
+.profile-photo {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+}
+ 
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #2a2a2a;
+  position: relative;
+  z-index: 1;
+}
+ 
+.profile-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  background: #181818;
+  border: 2px solid #2a2a2a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  z-index: 0;
+}
+ 
+.profile-avatar {
+  font-size: 5rem;
+  width: 140px;
+  height: 140px;
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+ 
+/* ✦ label — now consistent with index .hero-label */
+.hero-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #DBB4A0;
+  margin-bottom: 1rem;
+}
+ 
+.profile-details h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+ 
+.profile-tagline {
+  color: #888880;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+ 
+.profile-badges {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+ 
+.profile-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  color: #888880;
+  letter-spacing: 0.03em;
+}
+ 
+/* --- Stats (matches movies.css .stat design) --- */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 2rem 5%;
+  border-bottom: 1px solid #2a2a2a;
+}
+ 
+/* --- About Text Columns --- */
+.about-text-section {
+  padding: 4.5rem 5%;
+  border-bottom: 1px solid #2a2a2a;
+}
+ 
+.about-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+ 
+.about-col h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.3px;
+  color: #DBB4A0;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+ 
+.about-col p {
+  color: #888880;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+ 
+.about-col p strong {
+  color: #DBD3D8;
+  font-weight: 500;
+}
+ 
+/* --- Top 5 --- */
+.top5-section {
+  padding: 2.5rem 5% 3rem;
+  background: #181818;
+  border-bottom: 1px solid #2a2a2a;
+}
+ 
+.top5-section .section-header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  margin-bottom: 2.5rem;
+}
+ 
+.top5-sub {
+  color: #888880;
+  font-size: 0.88rem;
+}
+ 
+.top5-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 760px;
+}
+ 
+.top5-card {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  background: #0e0e0e;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+  cursor: default;
+}
+ 
+.top5-card:hover {
+  border-color: #DBB4A0;
+  transform: translateX(6px);
+}
+ 
+.top5-rank {
+  font-family: 'Bebas Neue', 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #DBB4A0;
+  opacity: 0.22;
+  width: 44px;
+  flex-shrink: 0;
+  line-height: 1;
+  text-align: center;
+}
+ 
+.top5-card:first-child .top5-rank {
+  opacity: 1;
+}
+ 
+.poster-sm {
+  width: 54px !important;
+  aspect-ratio: 2/3;
+  flex-shrink: 0;
+  border-radius: 5px;
+  object-fit: cover;
+}
+ 
+.top5-poster-placeholder {
+  width: 54px;
+  aspect-ratio: 2/3;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #222;
+  border: 1px solid #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  opacity: 0.4;
+}
+ 
+.top5-info {
+  flex: 1;
+  min-width: 0;
+}
+ 
+.top5-info h4 {
+  font-family: 'Bebas Neue', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin-bottom: 0.15rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ 
+.top5-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+ 
+.top5-verdict {
+  font-size: 0.8rem;
+  color: #888880;
+  font-style: italic;
+}
+ 
+.top5-stars {
+  font-size: 0.8rem;
+  color: #DBB4A0;
+  letter-spacing: 1px;
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .about-profile {
+    gap: 2rem;
+  }
+  .about-columns {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+ 
+@media (max-width: 600px) {
+  .about-profile {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+  .profile-badges {
+    justify-content: center;
+  }
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .top5-rank {
+    font-size: 2rem;
+    width: 32px;
+  }
+}
