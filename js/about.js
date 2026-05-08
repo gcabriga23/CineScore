@@ -149,23 +149,27 @@ function renderTop5(movies) {
 // Fetches all movies and top 5 from the server then renders the page
 async function loadAboutPage() {
   try {
-    // Fetch both endpoints at the same time for faster loading
-    const [moviesResponse, top5Response] = await Promise.all([
-      fetch('database/movies.json'),
-      fetch('database/movies.json?action=top5')
-    ]);
+    const response = await fetch('database/movies.json');
+    if (!response.ok) throw new Error();
 
-    if (!moviesResponse.ok || !top5Response.ok) throw new Error();
+    const movies = await response.json();
 
-    const movies = await moviesResponse.json();
-    const top5 = await top5Response.json();
+    // Filter top 5 by hardcoded IDs in ranked order
+    const top5_ids = [10, 9, 44, 14, 18];
+    const top5 = [];
+    top5_ids.forEach(function(id, index) {
+      movies.forEach(function(movie) {
+        if (movie.id === id) {
+          movie.rank = index + 1;
+          top5.push(movie);
+        }
+      });
+    });
 
-    // Fill in the stats and top 5 sections
     renderStats(movies);
     renderTop5(top5);
 
   } catch (error) {
-    // Server not ready yet — wait 2 seconds and try again
     setTimeout(loadAboutPage, 2000);
   }
 }
