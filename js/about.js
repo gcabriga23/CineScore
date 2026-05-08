@@ -1,30 +1,7 @@
-// Counts up from 0 to a target number over a given duration (in milliseconds)
-function animateCounter(element, target, duration) {
-  const start = performance.now();
-
-  function update(currentTime) {
-    // Calculate how far along the animation we are (0 to 1)
-    const elapsed = currentTime - start;
-    const progress = Math.min(elapsed / duration, 1);
-
-    // Set the current number based on progress
-    element.textContent = Math.floor(progress * target);
-
-    // Keep going until we reach the end
-    if (progress < 1) {
-      requestAnimationFrame(update);
-    } else {
-      element.textContent = target;
-    }
-  }
-
-  requestAnimationFrame(update);
-}
-
 // Fills in the 4 stat boxes using the full movie list
 function renderStats(movies) {
   // Total number of movies watched
-  animateCounter(document.getElementById('stat-watched'), movies.length, 1000);
+  document.getElementById('stat-watched').textContent = movies.length;
 
   // Average rating
   let totalScore = 0;
@@ -68,22 +45,15 @@ function renderStats(movies) {
   });
   document.getElementById('stat-fav-genre').textContent = topGenre;
 
-  // Rewatch worthy — animate then add % symbol after
+  // Rewatch worthy — show as a percentage of total movies
   let rewatchCount = 0;
   movies.forEach(function(movie) {
     if (movie.score >= 4) {
       rewatchCount++;
     }
   });
-  let rewatchPct = 0;
-  if (movies.length > 0) {
-    rewatchPct = Math.round((rewatchCount / movies.length) * 100);
-  }
-  const rewatchEl = document.getElementById('stat-rewatch');
-  animateCounter(rewatchEl, rewatchPct, 1000);
-  setTimeout(function() {
-    rewatchEl.textContent = rewatchPct + '%';
-  }, 1050);
+  const rewatchPct = movies.length > 0 ? Math.round((rewatchCount / movies.length) * 100) : 0;
+  document.getElementById('stat-rewatch').textContent = rewatchPct + '%';
 }
 
 // Builds and displays the Top 5 movie cards
@@ -100,10 +70,7 @@ function renderTop5(movies) {
   let cards = '';
   movies.forEach(function(movie) {
     // Pick a background color for the poster
-    let bg = POSTER_BACKGROUNDS[movie.rank - 1];
-    if (!bg) {
-      bg = '#181818';
-    }
+    const bg = POSTER_BACKGROUNDS[movie.rank - 1] || '#181818';
 
     // Build the poster image tag if a poster exists
     let posterImg = '';
@@ -146,7 +113,7 @@ function renderTop5(movies) {
   grid.innerHTML = cards;
 }
 
-// Fetches all movies and top 5 from the server then renders the page
+// Fetches all movies then renders stats and top 5
 async function loadAboutPage() {
   try {
     const response = await fetch('database/movies.json');
@@ -170,6 +137,7 @@ async function loadAboutPage() {
     renderTop5(top5);
 
   } catch (error) {
+    // Wait 2 seconds and try again
     setTimeout(loadAboutPage, 2000);
   }
 }
