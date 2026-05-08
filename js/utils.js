@@ -67,7 +67,7 @@ function buildMovieCard(movie, index) {
 
   // Return the full movie card HTML
   return `
-    <div class="movie-card">
+    <div class="movie-card" onclick="this.classList.toggle('tapped')">
       <div class="poster" style="background:${bg};">
         ${poster}
         <div class="card-rating-overlay">${convertScoreToStars(movie.score)}</div>
