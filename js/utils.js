@@ -67,8 +67,7 @@ function buildMovieCard(movie, index) {
 
   // Return the full movie card HTML
   return `
-    <div class="movie-card" onclick="this.classList.toggle('tapped')">
-      <div class="poster" style="background:${bg};">
+<div class="movie-card" onclick="document.querySelectorAll('.movie-card.tapped').forEach(function(c){ if(c !== this) c.classList.remove('tapped'); }.bind(this)); this.classList.toggle('tapped')">      <div class="poster" style="background:${bg};">
         ${poster}
         <div class="card-rating-overlay">${convertScoreToStars(movie.score)}</div>
         ${synopsis}
