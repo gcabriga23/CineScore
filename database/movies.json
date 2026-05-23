@@ -559,5 +559,27 @@
         "synopsis": "A spirited teen dreaming of the perfect debut makes a deal with a lonely newcomer, but unexpected feelings and revelations may shatter their plans.",
         "title": "18th Rose",
         "verdict": null
+    },
+     {
+        "director": "Nathan Greno",
+        "genre": "Adventure, Comedy",
+        "id": 53,
+        "poster_image": "swapped_poster.jpg",
+        "release_year": 2026,
+        "score": 5,
+        "synopsis": "A small woodland creature and a majestic bird, two natural sworn enemies of the Valley, magically trade places and set off on an adventure of a lifetime.",
+        "title": "Swapped",
+        "verdict": null
+    },
+    {
+        "director": "Irene Villamor",
+        "genre": "Romance, Drama",
+        "id": 54,
+        "poster_image": "thelovedone_poster.jpg",
+        "release_year": 2026,
+        "score": 3,
+        "synopsis": "Two former lovers reunite after fifteen years, and confront unresolved emotions, past heartbreak, and lingering feelings.",
+        "title": "The Loved One",
+        "verdict": null
     }
 ]
