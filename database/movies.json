@@ -581,5 +581,49 @@
         "synopsis": "Two former lovers reunite after fifteen years, and confront unresolved emotions, past heartbreak, and lingering feelings.",
         "title": "The Loved One",
         "verdict": null
+    },
+     {
+        "director": "Thor Freudenthal",
+        "genre": "Comedy",
+        "id": 55,
+        "poster_image": "doawk.webp",
+        "release_year": 2010,
+        "score": 4,
+        "synopsis": "Middle school is not an enjoyable experience for preteen Greg Heffley (Zachary Gordon) but a horrid ordeal of social land-mines that he must bear. To do so, he devises schemes to win him the recognition and status he feels he deserves -- all of which fail miserably. Greg chronicles his misadventures, thoughts and opinions in a diary to prepare for the day that he will no longer have to put up with nonsense.",
+        "title": "Diary of a Wimpy Kid ",
+        "verdict": null
+    },
+    {
+        "director": "David Bowers",
+        "genre": "Comedy",
+        "id": 56,
+        "poster_image": "doawkrd.jpg",
+        "release_year": 2011,
+        "score": 4,
+        "synopsis": "Wimpy Greg Heffley (Zachary Gordon), now in seventh grade, thinks he has it all together. He has mastered middle school and gotten rid of the Cheese Touch. However, Greg's older brother, Rodrick (Devon Bostick), is itching to cut him down to size. He gets the perfect opportunity when their mother (Rachael Harris) tries to force the boys to bond. Rodrick may be Greg's chief tormentor, but he feels his constant pranks are just what his little brother needs to prepare him for life's hard knocks.",
+        "title": "Diary of a Wimpy Kid: Rodrick Rules",
+        "verdict": null
+    },
+    {
+        "director": "David Bowers",
+        "genre": "Comedy",
+        "id": 57,
+        "poster_image": "doawkdd.jpg",
+        "release_year": 2012,
+        "score": 4,
+        "synopsis": "It's summer, and Greg Heffley (Zachary Gordon) is looking forward to playing video games and spending time with his friends. However, Greg's dad (Steve Zahn) has other plans: He's decided that some father-son bonding time is in order. Desperate to prevent his dad from ruining summer vacation, Greg pretends he has a job at a ritzy country club. But Greg's plan backfires, leaving him in the middle of embarrassing mishaps and a camping trip gone wrong.",
+        "title": "Diary of a Wimpy Kid: Dog Days",
+        "verdict": null
+    },
+    {
+        "director": "Tyree Dillihay, Adam Rosette",
+        "genre": "Comedy",
+        "id": 58,
+        "poster_image": "goat.jpg",
+        "release_year": 2026,
+        "score": 3,
+        "synopsis": "A small goat named Will gets a once-in-a-lifetime shot to join the pros and play roarball -- a high-intensity, full-contact sport that's dominated by the fastest, fiercest animals in the world. Ridiculed by his teammates, Will becomes determined to revolutionize the sport and prove that \"small can ball!\"",
+        "title": "Goat",
+        "verdict": null
     }
 ]
