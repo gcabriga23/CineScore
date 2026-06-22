@@ -625,5 +625,16 @@
         "synopsis": "A small goat named Will gets a once-in-a-lifetime shot to join the pros and play roarball -- a high-intensity, full-contact sport that's dominated by the fastest, fiercest animals in the world. Ridiculed by his teammates, Will becomes determined to revolutionize the sport and prove that \"small can ball!\"",
         "title": "Goat",
         "verdict": null
+    },
+    {
+        "director": "Jerry Lopez Sineneng",
+        "genre": "Romance, Drama",
+        "id": 59,
+        "poster_image": "asm.webp",
+        "release_year": 2026,
+        "score": 3,
+        "synopsis": "Sandra and Dindo navigate the shifting tides of memory when an early-onset diagnosis threatens to erase their shared history.",
+        "title": "A Special Memory",
+        "verdict": null
     }
 ]
